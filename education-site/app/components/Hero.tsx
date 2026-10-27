@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div style={{ flex: 1 }}>
+          <div className="hero-img-wrap">
             <div style={{ position: "relative", width: "100%", aspectRatio: "3/2", borderRadius: 8, overflow: "hidden" }}>
               <Image
                 src="/hero-learning.jpg"
@@ -57,8 +57,10 @@ export default function Hero() {
       </div>
 
       <style>{`
+        .hero-img-wrap { flex: 1; width: 100%; }
         @media (max-width: 768px) {
           .hero-inner { flex-direction: column !important; gap: 32px !important; }
+          .hero-img-wrap { flex: none !important; width: 100% !important; }
         }
       `}</style>
     </section>

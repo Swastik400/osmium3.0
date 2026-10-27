@@ -45,7 +45,7 @@ export default function AudienceCards() {
         }
         @media (max-width: 768px) {
           .audience-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 16px;
           }
         }

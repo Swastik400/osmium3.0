@@ -78,7 +78,7 @@ export default function ContactForm() {
         </div>
 
         {/* Right — form */}
-        <div style={{ flex: 1, border: "1px solid #e5e7eb", borderRadius: 16, padding: "48px 40px" }}>
+        <div style={{ flex: 1, border: "1px solid #e5e7eb", borderRadius: 16, padding: "48px 40px" }} className="contact-card">
           {submitted ? (
             <div style={{ textAlign: "center", padding: "40px 0" }}>
               <div style={{ width: 48, height: 48, borderRadius: "50%", backgroundColor: "#000", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
@@ -151,11 +151,8 @@ export default function ContactForm() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .contact-layout { flex-direction: column !important; gap: 48px !important; }
-        }
         @media (max-width: 560px) {
-          .form-row { grid-template-columns: 1fr !important; }
+          .contact-card { padding: 24px 20px !important; }
         }
       `}</style>
     </section>

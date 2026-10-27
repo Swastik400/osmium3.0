@@ -83,12 +83,7 @@ export default function FeatureAccordion() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .accordion-layout { flex-direction: column !important; }
-          .accordion-list { width: 100% !important; }
-        }
-      `}</style>
+      <style>{``}</style>
     </section>
   );
 }

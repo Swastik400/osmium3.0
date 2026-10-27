@@ -47,5 +47,16 @@ body {
 }
 
 @media (max-width: 640px) {
-  .page-container { padding-left: 24px; padding-right: 24px; }
+  .page-container { padding-left: 20px; padding-right: 20px; }
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  .hero-inner { flex-direction: column !important; gap: 32px !important; }
+  .accordion-layout { flex-direction: column !important; }
+  .accordion-list { width: 100% !important; }
+  .contact-layout { flex-direction: column !important; gap: 40px !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .section-title { font-size: clamp(1.75rem, 8vw, 3rem) !important; }
 }

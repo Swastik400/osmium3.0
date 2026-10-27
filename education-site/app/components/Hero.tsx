@@ -58,7 +58,7 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-inner { flex-direction: column !important; }
+          .hero-inner { flex-direction: column !important; gap: 32px !important; }
         }
       `}</style>
     </section>

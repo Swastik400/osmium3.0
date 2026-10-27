@@ -28,6 +28,7 @@ export default function FeatureAccordion() {
         </div>
 
         <div style={{ display: "flex", gap: 48, alignItems: "flex-start" }} className="accordion-layout">
+
           {/* Accordion list */}
           <div style={{ width: 320, flexShrink: 0 }} className="accordion-list">
             {items.map((item, i) => (
@@ -51,9 +52,15 @@ export default function FeatureAccordion() {
                   )}
                 </button>
                 {active === i && (
-                  <p style={{ fontSize: 13, color: "#9ca3af", paddingBottom: 16, lineHeight: 1.6 }}>
-                    {item.desc}
-                  </p>
+                  <>
+                    <p style={{ fontSize: 13, color: "#9ca3af", paddingBottom: 16, lineHeight: 1.6 }}>
+                      {item.desc}
+                    </p>
+                    {/* Mobile image — shown only on mobile below the active item */}
+                    <div className="accordion-img-mobile" style={{ display: "none", position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 10, overflow: "hidden", marginBottom: 16 }}>
+                      <Image src={item.img} alt={item.alt} fill style={{ objectFit: "cover" }} sizes="100vw" />
+                    </div>
+                  </>
                 )}
               </div>
             ))}
@@ -68,22 +75,28 @@ export default function FeatureAccordion() {
             </div>
           </div>
 
-          {/* Image panel */}
-          <div style={{ flex: 1 }}>
+          {/* Desktop image panel */}
+          <div style={{ flex: 1 }} className="accordion-img-desktop">
             <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 12, overflow: "hidden" }}>
               <Image
                 src={items[active].img}
                 alt={items[active].alt}
                 fill
                 style={{ objectFit: "cover", transition: "opacity 0.3s" }}
-                sizes="(max-width: 768px) 100vw, 60vw"
+                sizes="60vw"
               />
             </div>
           </div>
+
         </div>
       </div>
 
-      <style>{``}</style>
+      <style>{`
+        @media (max-width: 768px) {
+          .accordion-img-desktop { display: none !important; }
+          .accordion-img-mobile { display: block !important; }
+        }
+      `}</style>
     </section>
   );
 }

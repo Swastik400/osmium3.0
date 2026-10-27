@@ -60,21 +60,7 @@ export default function ContactForm() {
           <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.7, marginBottom: 40, maxWidth: 420 }}>
             Tell us about your organisation and what you&apos;re looking to achieve. Our team will connect with you to discuss enterprise solutions, implementation, and next steps.
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {[
-              { label: "Personalised onboarding", desc: "Dedicated support from day one." },
-              { label: "Flexible deployment", desc: "Cloud, on-premise, or hybrid — your choice." },
-              { label: "Institution-grade security", desc: "Built with data privacy at the core." },
-            ].map((item) => (
-              <div key={item.label} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#000", marginTop: 7, flexShrink: 0 }} />
-                <div>
-                  <p style={{ fontSize: 14, fontWeight: 600, color: "#000", marginBottom: 2 }}>{item.label}</p>
-                  <p style={{ fontSize: 13, color: "#9ca3af" }}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+
         </div>
 
         {/* Right — form */}

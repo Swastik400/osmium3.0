@@ -10,7 +10,7 @@ export default function Hero() {
           {/* Text */}
           <div style={{ flex: 1 }}>
             <p style={{ fontSize: 13, fontWeight: 500, color: "#6b7280", marginBottom: 16, letterSpacing: "0.02em" }}>
-              Osmium AI — Enterprise AI Solutions by Navchetna Technologies
+              Osmium AI - Enterprise AI Solutions by Navchetna Technologies
             </p>
             <h1 className="section-title" style={{ color: "#000", marginBottom: 24, textAlign: "left" }}>
               AI-Powered Education, Built for Every Institution.

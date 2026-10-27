@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OpenAI for Education | AI for students, educators, and institutions",
+  title: "Osmium AI | AI-Powered Education for Every Institution",
   description:
-    "Explore OpenAI tools and resources for students, educators, schools, universities, and countries using AI to learn, teach, research, and lead.",
+    "Osmium AI helps educational organisations deliver personalised learning, intelligent assessments, and AI-driven academic experiences at scale.",
+  icons: {
+    icon: "/osmium-logo.png",
+  },
 };
 
 export default function RootLayout({

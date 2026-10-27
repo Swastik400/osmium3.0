@@ -4,9 +4,9 @@ export default function NewsCards() {
   return (
     <>
       {/* One Platform CTA */}
-      <section style={{ borderTop: "1px solid #e5e7eb", padding: "80px 32px", backgroundColor: "#f9fafb" }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 600, color: "#000", marginBottom: 16, letterSpacing: "-0.02em" }}>
+      <section style={{ borderTop: "1px solid #e5e7eb", padding: "80px 0", backgroundColor: "#f9fafb" }}>
+        <div className="page-container" style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
+          <h2 className="section-title" style={{ color: "#000", marginBottom: 16 }}>
             One Platform. More Possibilities for Education.
           </h2>
           <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.6, marginBottom: 12 }}>

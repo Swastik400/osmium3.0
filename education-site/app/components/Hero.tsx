@@ -1,21 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section style={{ paddingTop: 60 }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "64px 32px" }}>
-        <div style={{ display: "flex", flexDirection: "row", gap: 48, alignItems: "flex-end" }} className="hero-inner">
+      <div className="page-container" style={{ paddingTop: 64, paddingBottom: 64 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 64 }} className="hero-inner">
+
           {/* Text */}
           <div style={{ flex: 1 }}>
             <p style={{ fontSize: 13, fontWeight: 500, color: "#6b7280", marginBottom: 16, letterSpacing: "0.02em" }}>
               Osmium AI — Enterprise AI Solutions by Navchetna Technologies
             </p>
-            <h1 style={{
-              fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600,
-              lineHeight: 1.1, letterSpacing: "-0.02em", color: "#000",
-              marginBottom: 24, maxWidth: 600
-            }}>
+            <h1 className="section-title" style={{ color: "#000", marginBottom: 24, textAlign: "left" }}>
               AI-Powered Education, Built for Every Institution.
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "#4b5563", maxWidth: 520, marginBottom: 32 }}>
@@ -43,11 +40,11 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div style={{ flex: 1, width: "100%" }}>
-            <div style={{ position: "relative", width: "100%", aspectRatio: "1/1", borderRadius: 16, overflow: "hidden" }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ position: "relative", width: "100%", aspectRatio: "3/2", borderRadius: 8, overflow: "hidden" }}>
               <Image
-                src="/education-hero-media.png"
-                alt="Students and educators gathered around laptops in a classroom."
+                src="/hero-learning.jpg"
+                alt="Students learning with technology"
                 fill
                 style={{ objectFit: "cover", objectPosition: "center" }}
                 priority
@@ -55,6 +52,7 @@ export default function Hero() {
               />
             </div>
           </div>
+
         </div>
       </div>
 

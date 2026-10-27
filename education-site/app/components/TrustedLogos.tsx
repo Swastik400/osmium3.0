@@ -1,7 +1,7 @@
 export default function TrustedLogos() {
   return (
-    <section style={{ borderTop: "1px solid #e5e7eb", padding: "64px 32px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
+    <section style={{ borderTop: "1px solid #e5e7eb", padding: "64px 0" }}>
+      <div className="page-container" style={{ textAlign: "center" }}>
         <h3 style={{ fontSize: 18, fontWeight: 500, color: "#000", marginBottom: 16 }}>
           Trusted by the Next Generation of Education
         </h3>

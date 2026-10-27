@@ -4,22 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 const items = [
-  { title: "Personalised Learning Experiences", desc: "Help learners discover relevant explanations, learning resources, revision materials, and practice activities suited to their learning needs.", img: "/expand-your-learning.png", alt: "Personalised learning interface." },
-  { title: "Intelligent Assessment & Practice", desc: "Generate AI-assisted practice tests and question sets to help learners evaluate their understanding and identify areas for improvement.", img: "/create-interactive-teaching-materials.png", alt: "AI assessment interface." },
-  { title: "Performance Insights", desc: "Use learning and assessment data, where supported, to identify knowledge gaps and guide more focused academic practice.", img: "/lead-your-institution.png", alt: "Performance insights dashboard." },
-  { title: "AI-Powered Academic Assistance", desc: "Give learners an additional way to explore concepts, ask questions, and engage with educational material.", img: "/make-time-for-what-matters.png", alt: "AI academic assistance interface." },
-  { title: "Institution-Centred Learning", desc: "Explore how Osmium can fit your institution's teaching workflows, learning requirements, and educational objectives.", img: "/prepare-jobs.png", alt: "Institution learning dashboard." },
-  { title: "Designed to Grow With Your Institution", desc: "Discuss deployment options, integration requirements, and potential customisation based on your organisation's needs.", img: "/advance-research.png", alt: "Scalable platform interface." },
+  { title: "Personalised Learning Experiences", desc: "Help learners discover relevant explanations, learning resources, revision materials, and practice activities suited to their learning needs.", img: "/personalised-learning.png", alt: "Personalised learning interface." },
+  { title: "Intelligent Assessment & Practice", desc: "Generate AI-assisted practice tests and question sets to help learners evaluate their understanding and identify areas for improvement.", img: "/intelligent-assessment.png", alt: "AI assessment interface." },
+  { title: "Performance Insights", desc: "Use learning and assessment data, where supported, to identify knowledge gaps and guide more focused academic practice.", img: "/performance-insights.png", alt: "Performance insights dashboard." },
+  { title: "AI-Powered Academic Assistance", desc: "Give learners an additional way to explore concepts, ask questions, and engage with educational material.", img: "/ai-academic-assistance.png", alt: "AI academic assistance interface." },
+  { title: "Institution-Centred Learning", desc: "Explore how Osmium can fit your institution's teaching workflows, learning requirements, and educational objectives.", img: "/institution-centred.png", alt: "Institution learning dashboard." },
+  { title: "Designed to Grow With Your Institution", desc: "Discuss deployment options, integration requirements, and potential customisation based on your organisation's needs.", img: "/designed-to-grow.png", alt: "Scalable platform interface." },
 ];
 
 export default function FeatureAccordion() {
   const [active, setActive] = useState(0);
 
   return (
-    <section style={{ borderTop: "1px solid #e5e7eb", padding: "80px 32px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+    <section style={{ borderTop: "1px solid #e5e7eb", padding: "80px 0" }}>
+      <div className="page-container">
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 600, color: "#000", marginBottom: 16, letterSpacing: "-0.02em" }}>
+          <h2 className="section-title" style={{ color: "#000", marginBottom: 16 }}>
             A Smarter Way to Teach, Learn, and Assess
           </h2>
           <p style={{ fontSize: 16, color: "#6b7280", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>

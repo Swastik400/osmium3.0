@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = ["Solutions", "Platform", "For Institutions", "About Us"];
 
@@ -15,15 +16,13 @@ export default function Navbar() {
     }}>
       <div style={{
         maxWidth: 1280, width: "100%", margin: "0 auto",
-        padding: "0 32px", display: "flex", alignItems: "center",
+        padding: "0 80px", display: "flex", alignItems: "center",
         justifyContent: "space-between", height: "100%"
       }}>
         {/* Logo */}
-        <Link href="/" aria-label="Osmium AI Home" style={{
-          display: "flex", alignItems: "center", flexShrink: 0,
-          fontSize: 20, fontWeight: 700, color: "#000", textDecoration: "none", letterSpacing: "-0.02em"
-        }}>
-          Osmium AI
+        <Link href="/" aria-label="Osmium AI Home" style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0, textDecoration: "none" }}>
+          <Image src="/osmium-logo.png" alt="Osmium AI" width={36} height={36} style={{ objectFit: "contain" }} priority />
+          <span style={{ fontSize: 20, fontWeight: 700, color: "#000", letterSpacing: "-0.02em" }}>Osmium AI</span>
         </Link>
 
         {/* Desktop Nav */}

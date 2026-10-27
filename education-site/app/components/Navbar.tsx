@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="Osmium AI Home" style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0, textDecoration: "none" }}>
           <Image src="/osmium-logo.png" alt="Osmium AI" width={32} height={32} style={{ objectFit: "contain" }} priority />
-          <span style={{ fontSize: 18, fontWeight: 500, color: "#000", letterSpacing: "-0.01em", fontFamily: "var(--font-poppins), sans-serif" }}>Osmium AI</span>
+          <span style={{ fontSize: 18, fontWeight: 500, color: "#000", letterSpacing: "-0.01em", fontFamily: "var(--font-poppins), 'Helvetica Neue', sans-serif" }}>Osmium AI</span>
         </Link>
 
         {/* Desktop Nav */}

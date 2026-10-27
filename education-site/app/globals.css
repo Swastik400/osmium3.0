@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #0d0d0d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nav-link:hover { color: #000 !important; }
+.footer-link:hover { color: #000 !important; }
+.btn-ghost:hover { background-color: #e5e7eb !important; }
+.btn-dark:hover { background-color: #1f2937 !important; }
+.audience-card:hover { border-color: #9ca3af !important; }
+.news-card img { transition: transform 0.3s ease; }
+.news-card:hover img { transform: scale(1.025); }

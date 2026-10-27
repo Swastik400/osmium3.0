@@ -1,3 +1,5 @@
+"use client";
+
 const logos = [
   { name: "AWS", text: "Amazon Web Services" },
   { name: "Google", text: "Google for Education" },

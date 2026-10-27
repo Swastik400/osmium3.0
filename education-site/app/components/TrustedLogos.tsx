@@ -1,14 +1,13 @@
 "use client";
+import Image from "next/image";
 
 const logos = [
-  { name: "AWS", text: "Amazon Web Services" },
-  { name: "Google", text: "Google for Education" },
-  { name: "Microsoft", text: "Microsoft" },
-  { name: "Coursera", text: "Coursera" },
-  { name: "Khan Academy", text: "Khan Academy" },
-  { name: "BYJU'S", text: "BYJU'S" },
-  { name: "Unacademy", text: "Unacademy" },
-  { name: "Vedantu", text: "Vedantu" },
+  { name: "AWS", src: "/aws.svg" },
+  { name: "HomeGuru", src: "/homeguru.svg" },
+  { name: "Plaur", src: "/plaur.svg" },
+  { name: "AWS", src: "/aws.svg" },
+  { name: "HomeGuru", src: "/homeguru.svg" },
+  { name: "Plaur", src: "/plaur.svg" },
 ];
 
 export default function TrustedLogos() {
@@ -16,7 +15,8 @@ export default function TrustedLogos() {
     <section style={{ borderTop: "1px solid #e5e7eb", padding: "56px 0", backgroundColor: "#fff", overflow: "hidden" }}>
       <p style={{
         textAlign: "center", marginBottom: 40,
-        fontFamily: "monospace", fontSize: 10, fontWeight: 500,
+        fontFamily: "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        fontSize: 10, fontWeight: 500,
         textTransform: "uppercase", letterSpacing: "0.16em", color: "#8b8b8b"
       }}>
         Trusted by teams building with intent
@@ -27,26 +27,21 @@ export default function TrustedLogos() {
         maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)"
       }}>
-        {/* Two copies for seamless loop */}
         {[0, 1].map((copy) => (
           <div key={copy} style={{
             display: "flex", flexShrink: 0, flexWrap: "nowrap",
-            alignItems: "center", gap: 56, paddingRight: 56,
+            alignItems: "center", gap: 64, paddingRight: 64,
             animation: "ticker 28s linear infinite",
           }}>
-            {logos.map((logo) => (
-              <div key={logo.name} style={{
-                flexShrink: 0, opacity: 0.3, filter: "grayscale(1)",
-                transition: "opacity 0.3s",
-                cursor: "default",
-                whiteSpace: "nowrap",
-                fontSize: 15, fontWeight: 600, color: "#0a0a0a",
-                letterSpacing: "-0.02em",
+            {logos.map((logo, i) => (
+              <div key={`${logo.name}-${i}`} style={{
+                flexShrink: 0, opacity: 0.35, filter: "grayscale(1)",
+                transition: "opacity 0.3s", cursor: "default",
               }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
-                onMouseLeave={e => (e.currentTarget.style.opacity = "0.3")}
+                onMouseEnter={e => (e.currentTarget.style.opacity = "0.75")}
+                onMouseLeave={e => (e.currentTarget.style.opacity = "0.35")}
               >
-                {logo.text}
+                <Image src={logo.src} alt={logo.name} width={120} height={40} style={{ objectFit: "contain", height: 36, width: "auto" }} />
               </div>
             ))}
           </div>

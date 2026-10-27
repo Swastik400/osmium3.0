@@ -15,29 +15,41 @@ export default function AudienceCards() {
           <h2 className="section-title" style={{ color: "#000", marginBottom: 16 }}>
             Empowering Education at Every Level
           </h2>
-          <p style={{ fontSize: 16, color: "#6b7280", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
+          <p style={{ fontSize: 16, color: "#6b7280", maxWidth: 560, margin: "0 auto", lineHeight: 1.6, fontFamily: "\"Helvetica Neue\", Helvetica, Arial, sans-serif" }}>
             From classrooms to large educational networks, Osmium AI aims to make personalised, AI-powered learning more accessible to institutions of every size.
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 24 }}>
+        <div className="audience-grid">
           {cards.map((card) => (
             <div key={card.title} style={{
               border: "1px solid #e5e7eb", borderRadius: 12, padding: 24,
-              display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 24,
+              display: "flex", flexDirection: "column", gap: 0,
               transition: "border-color 0.2s"
             }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <div style={{ position: "relative", width: "100%", aspectRatio: "1/1", borderRadius: 8, overflow: "hidden" }}>
-                  <Image src={card.img} alt={card.alt} fill style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
-                </div>
-                <h3 style={{ fontSize: 20, fontWeight: 600, color: "#000" }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.6 }}>{card.desc}</p>
+              <div style={{ position: "relative", width: "100%", aspectRatio: "1/1", borderRadius: 8, overflow: "hidden", marginBottom: 16 }}>
+                <Image src={card.img} alt={card.alt} fill style={{ objectFit: "cover" }} sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw" />
               </div>
+              <h3 style={{ fontSize: 17, fontWeight: 600, color: "#000", marginBottom: 6, fontFamily: "\"Helvetica Neue\", Helvetica, Arial, sans-serif" }}>{card.title}</h3>
+              <p style={{ fontSize: 13, color: "#6b7280", lineHeight: 1.6, margin: 0, fontFamily: "\"Helvetica Neue\", Helvetica, Arial, sans-serif" }}>{card.desc}</p>
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        .audience-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 768px) {
+          .audience-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

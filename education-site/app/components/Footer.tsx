@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   "Platform": [
-    { label: "Solutions", href: "/solutions" },
-    { label: "Platform", href: "/platform" },
-    { label: "For Institutions", href: "/for-institutions" },
+    { label: "Solutions", href: "/#solutions" },
+    { label: "Platform", href: "/#platform" },
+    { label: "For Institutions", href: "/#for-institutions" },
     { label: "Pricing", href: "/#contact" },
   ],
   "Organisation": [
-    { label: "About Us", href: "/about" },
+    { label: "About Us", href: "https://www.navchetna.tech/about" },
     { label: "Contact Us", href: "/#contact" },
     { label: "Navchetna Technologies", href: "https://navchetna.tech/" },
   ],

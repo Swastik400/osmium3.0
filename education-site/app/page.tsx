@@ -14,8 +14,8 @@ export default function Home() {
       <main id="main">
         <Hero />
         <TrustedLogos />
-        <AudienceCards />
-        <FeatureAccordion />
+        <div id="for-institutions"><AudienceCards /></div>
+        <div id="solutions"><div id="platform"><FeatureAccordion /></div></div>
         <NewsCards />
         <ContactForm />
       </main>

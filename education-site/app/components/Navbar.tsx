@@ -5,10 +5,10 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Solutions", href: "/solutions" },
-  { label: "Platform", href: "/platform" },
-  { label: "For Institutions", href: "/for-institutions" },
-  { label: "About Us", href: "/about" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Platform", href: "/#platform" },
+  { label: "For Institutions", href: "/#for-institutions" },
+  { label: "About Us", href: "https://www.navchetna.tech/about", external: true },
 ];
 
 export default function Navbar() {
@@ -33,9 +33,18 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav style={{ display: "flex", alignItems: "center", gap: 4, height: "100%" }} className="nav-desktop">
-          {navLinks.map(({ label, href }) => {
-            const active = pathname === href;
-            return (
+          {navLinks.map(({ label, href, external }) => {
+            const active = !external && pathname === href;
+            return external ? (
+              <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="nav-link" style={{
+                padding: "8px 14px", fontSize: 14, fontWeight: 500,
+                color: "#374151", textDecoration: "none",
+                borderRadius: 6, transition: "color 0.15s",
+                backgroundColor: "transparent",
+              }}>
+                {label}
+              </a>
+            ) : (
               <Link key={href} href={href} className="nav-link" style={{
                 padding: "8px 14px", fontSize: 14, fontWeight: active ? 600 : 500,
                 color: active ? "#000" : "#374151", textDecoration: "none",
@@ -82,15 +91,25 @@ export default function Navbar() {
           padding: "24px 20px", zIndex: 50
         }}>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 4 }}>
-            {navLinks.map(({ label, href }) => (
+            {navLinks.map(({ label, href, external }) => (
               <li key={href}>
-                <Link href={href} onClick={() => setMobileOpen(false)} style={{
-                  display: "block", fontSize: 16, fontWeight: pathname === href ? 600 : 500,
-                  color: pathname === href ? "#000" : "#374151",
-                  textDecoration: "none", padding: "12px 0", borderBottom: "1px solid #f3f4f6"
-                }}>
-                  {label}
-                </Link>
+                {external ? (
+                  <a href={href} target="_blank" rel="noopener noreferrer" style={{
+                    display: "block", fontSize: 16, fontWeight: 500,
+                    color: "#374151", textDecoration: "none",
+                    padding: "12px 0", borderBottom: "1px solid #f3f4f6"
+                  }}>
+                    {label}
+                  </a>
+                ) : (
+                  <Link href={href} onClick={() => setMobileOpen(false)} style={{
+                    display: "block", fontSize: 16, fontWeight: 500,
+                    color: "#374151", textDecoration: "none",
+                    padding: "12px 0", borderBottom: "1px solid #f3f4f6"
+                  }}>
+                    {label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

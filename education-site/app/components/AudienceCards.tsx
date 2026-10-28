@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const cards = [
-  { title: "Schools & K–12 Education", desc: "Support students and educators with AI-assisted learning resources, practice assessments, and personalised academic support.", img: "/media-k12.png", alt: "Students learning with an educator in a classroom." },
-  { title: "Higher Education", desc: "Enhance the learning experience with intelligent academic assistance, adaptive practice, and tools that support student learning and institutional innovation.", img: "/media-higher.png", alt: "Educators and students working together in a classroom." },
-  { title: "Coaching & Test Preparation", desc: "Help learners prepare for competitive examinations with AI-assisted mock tests, topic-focused practice, and performance-based learning recommendations.", img: "/media-students.png", alt: "Higher education students collaborating in a learning space." },
-  { title: "Education Networks & Enterprise", desc: "Explore scalable AI learning solutions for educational groups, multi-campus institutions, and organisations seeking to integrate intelligent learning into their existing ecosystem.", img: "/media-countries.png", alt: "Two attendees at a professional event." },
+  { title: "Schools & K–12 Education", desc: "Support students and educators with AI-assisted learning resources, practice assessments, and personalised academic support.", img: "/media-k12-v2.png", alt: "Students learning with an educator in a classroom." },
+  { title: "Higher Education", desc: "Enhance the learning experience with intelligent academic assistance, adaptive practice, and tools that support student learning and institutional innovation.", img: "/media-higher-v2.png", alt: "Educators and students working together in a classroom." },
+  { title: "Coaching & Test Preparation", desc: "Help learners prepare for competitive examinations with AI-assisted mock tests, topic-focused practice, and performance-based learning recommendations.", img: "/media-students-v2.png", alt: "Higher education students collaborating in a learning space." },
+  { title: "Education Networks & Enterprise", desc: "Explore scalable AI learning solutions for educational groups, multi-campus institutions, and organisations seeking to integrate intelligent learning into their existing ecosystem.", img: "/media-countries-v2.png", alt: "Two attendees at a professional event." },
 ];
 
 export default function AudienceCards() {

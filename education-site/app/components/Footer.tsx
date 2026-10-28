@@ -3,7 +3,6 @@ import Image from "next/image";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   "Platform": [
-    { label: "Solutions", href: "/#solutions" },
     { label: "Platform", href: "/#platform" },
     { label: "For Institutions", href: "/#for-institutions" },
     { label: "Pricing", href: "/#contact" },

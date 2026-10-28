@@ -2,11 +2,18 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-const navLinks = ["Solutions", "Platform", "For Institutions", "About Us"];
+const navLinks = [
+  { label: "Solutions", href: "/solutions" },
+  { label: "Platform", href: "/platform" },
+  { label: "For Institutions", href: "/for-institutions" },
+  { label: "About Us", href: "/about" },
+];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header style={{
@@ -20,26 +27,30 @@ export default function Navbar() {
         justifyContent: "space-between", height: "100%"
       }} className="navbar-inner">
         {/* Logo */}
-        <Link href="/" aria-label="Osmium AI Home" style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0, textDecoration: "none" }}>
-          <Image src="/osmium-logo.png" alt="Osmium AI" width={32} height={32} style={{ objectFit: "contain" }} priority />
-          <span style={{ fontSize: 18, fontWeight: 500, color: "#000", letterSpacing: "-0.01em", fontFamily: "var(--font-poppins), 'Helvetica Neue', sans-serif" }}>Osmium AI</span>
+        <Link href="/" aria-label="Osmium AI Home" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
+          <Image src="/osmium34.svg" alt="Osmium AI" width={140} height={30} style={{ objectFit: "contain", height: 28, width: "auto" }} priority />
         </Link>
 
         {/* Desktop Nav */}
         <nav style={{ display: "flex", alignItems: "center", gap: 4, height: "100%" }} className="nav-desktop">
-          {navLinks.map((link) => (
-            <Link key={link} href="#" className="nav-link" style={{
-              padding: "8px 14px", fontSize: 14, fontWeight: 500,
-              color: "#374151", textDecoration: "none", borderRadius: 6, transition: "color 0.15s"
-            }}>
-              {link}
-            </Link>
-          ))}
+          {navLinks.map(({ label, href }) => {
+            const active = pathname === href;
+            return (
+              <Link key={href} href={href} className="nav-link" style={{
+                padding: "8px 14px", fontSize: 14, fontWeight: active ? 600 : 500,
+                color: active ? "#000" : "#374151", textDecoration: "none",
+                borderRadius: 6, transition: "color 0.15s",
+                backgroundColor: active ? "#f3f4f6" : "transparent",
+              }}>
+                {label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Link href="#contact" className="btn-dark nav-cta" style={{
+          <Link href="/#contact" className="btn-dark nav-cta" style={{
             padding: "8px 18px", fontSize: 14, fontWeight: 500,
             borderRadius: 999, backgroundColor: "#000", color: "#fff",
             textDecoration: "none", display: "flex", alignItems: "center",
@@ -71,19 +82,20 @@ export default function Navbar() {
           padding: "24px 20px", zIndex: 50
         }}>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 4 }}>
-            {navLinks.map((link) => (
-              <li key={link}>
-                <Link href="#" onClick={() => setMobileOpen(false)} style={{
-                  display: "block", fontSize: 16, fontWeight: 500, color: "#000",
+            {navLinks.map(({ label, href }) => (
+              <li key={href}>
+                <Link href={href} onClick={() => setMobileOpen(false)} style={{
+                  display: "block", fontSize: 16, fontWeight: pathname === href ? 600 : 500,
+                  color: pathname === href ? "#000" : "#374151",
                   textDecoration: "none", padding: "12px 0", borderBottom: "1px solid #f3f4f6"
                 }}>
-                  {link}
+                  {label}
                 </Link>
               </li>
             ))}
           </ul>
           <div style={{ marginTop: 20 }}>
-            <Link href="#contact" onClick={() => setMobileOpen(false)} style={{
+            <Link href="/#contact" onClick={() => setMobileOpen(false)} style={{
               padding: "10px 24px", fontSize: 14, fontWeight: 500, borderRadius: 999,
               backgroundColor: "#000", color: "#fff", textDecoration: "none", display: "inline-flex"
             }}>

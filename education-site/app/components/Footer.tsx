@@ -1,10 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const footerLinks: Record<string, string[]> = {
-  "Platform": ["Personalised Learning", "AI Assessments", "Academic Assistance", "Enterprise Solutions"],
-  "Organisation": ["About Osmium", "Contact Us", "Navchetna Technologies"],
-  "Legal": ["Privacy Policy", "Terms of Service"],
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  "Platform": [
+    { label: "Solutions", href: "/solutions" },
+    { label: "Platform", href: "/platform" },
+    { label: "For Institutions", href: "/for-institutions" },
+    { label: "Pricing", href: "/#contact" },
+  ],
+  "Organisation": [
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "/#contact" },
+    { label: "Navchetna Technologies", href: "https://navchetna.tech/" },
+  ],
+  "Legal": [
+    { label: "Privacy Policy", href: "https://www.navchetna.tech/privacy" },
+    { label: "Terms of Service", href: "https://www.navchetna.tech/terms" },
+  ],
 };
 
 export default function Footer() {
@@ -14,9 +26,8 @@ export default function Footer() {
         {/* Brand + columns */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr repeat(3, auto)", gap: 40, marginBottom: 64, alignItems: "start" }} className="footer-grid">
           <div>
-            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 8, textDecoration: "none" }}>
-              <Image src="/osmium-logo.png" alt="Osmium AI" width={32} height={32} style={{ objectFit: "contain" }} />
-              <span style={{ fontSize: 18, fontWeight: 700, color: "#000", letterSpacing: "-0.02em" }}>Osmium AI</span>
+            <Link href="/" style={{ display: "inline-flex", alignItems: "center", marginBottom: 8, textDecoration: "none" }}>
+              <Image src="/osmium34.svg" alt="Osmium AI" width={140} height={30} style={{ objectFit: "contain", height: 28, width: "auto" }} />
             </Link>
             <p style={{ fontSize: 13, color: "#6b7280", lineHeight: 1.6, maxWidth: 240 }}>
               Intelligent learning. Personalised possibilities.<br />
@@ -30,9 +41,9 @@ export default function Footer() {
               </h4>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                 {links.map((link) => (
-                  <li key={link}>
-                    <Link href="#" style={{ fontSize: 14, color: "#4b5563", textDecoration: "none", transition: "color 0.15s" }}>
-                      {link}
+                  <li key={link.label}>
+                    <Link href={link.href} style={{ fontSize: 14, color: "#4b5563", textDecoration: "none", transition: "color 0.15s" }} className="footer-link">
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -49,8 +60,8 @@ export default function Footer() {
         }}>
           <p style={{ fontSize: 12, color: "#9ca3af" }}>© 2026 Osmium AI. All rights reserved. Powered by Navchetna Technologies.</p>
           <div style={{ display: "flex", gap: 16 }}>
-            {["Privacy Policy", "Terms of Service"].map((l) => (
-              <Link key={l} href="#" style={{ fontSize: 12, color: "#9ca3af", textDecoration: "none" }}>{l}</Link>
+            {([{ label: "Privacy Policy", href: "https://www.navchetna.tech/privacy" }, { label: "Terms of Service", href: "https://www.navchetna.tech/terms" }]).map(({ label, href }) => (
+              <Link key={label} href={href} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: "#9ca3af", textDecoration: "none" }}>{label}</Link>
             ))}
           </div>
         </div>

@@ -4,10 +4,10 @@ import Image from "next/image";
 const logos = [
   { name: "AWS", src: "/aws.svg" },
   { name: "HomeGuru", src: "/homeguru.svg" },
-  { name: "Plaur", src: "/plaur.svg" },
   { name: "AWS", src: "/aws.svg" },
   { name: "HomeGuru", src: "/homeguru.svg" },
-  { name: "Plaur", src: "/plaur.svg" },
+  { name: "AWS", src: "/aws.svg" },
+  { name: "HomeGuru", src: "/homeguru.svg" },
 ];
 
 export default function TrustedLogos() {
@@ -34,7 +34,7 @@ export default function TrustedLogos() {
             animation: "ticker 28s linear infinite",
           }}>
             {logos.map((logo, i) => (
-              <div key={`${logo.name}-${i}`} style={{
+              <div key={`${logo.name}-${copy}-${i}`} style={{
                 flexShrink: 0, opacity: 0.35, filter: "grayscale(1)",
                 transition: "opacity 0.3s", cursor: "default",
               }}

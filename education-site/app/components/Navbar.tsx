@@ -5,7 +5,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Solutions", href: "/#solutions" },
   { label: "Platform", href: "/#platform" },
   { label: "For Institutions", href: "/#for-institutions" },
   { label: "About Us", href: "https://www.navchetna.tech/about", external: true },
